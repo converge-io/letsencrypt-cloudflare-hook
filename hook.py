@@ -31,8 +31,7 @@ logger.setLevel(logging.INFO)
 
 try:
     CF_HEADERS = {
-        'X-Auth-Email': os.environ['CF_EMAIL'],
-        'X-Auth-Key'  : os.environ['CF_KEY'],
+        'Authorization': 'Bearer ' + os.environ['CF_TOKEN'],
         'Content-Type': 'application/json',
     }
 except KeyError:
